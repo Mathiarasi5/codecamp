@@ -32,6 +32,7 @@ def scrape_followers(driver, account,members):
 
     sleep(4)
     driver.find_element_by_partial_link_text("follower").click()
+    
 
     # Wait for the followers modal to load
     waiter.find_element(driver, "//div[@role='dialog']", by=XPATH)

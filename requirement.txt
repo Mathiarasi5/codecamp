@@ -1,4 +1,5 @@
 sudo apt-get install python3
 pip3 install selenium
+pip3 install explicit
 apt-get update
 apt-get upgrade

@@ -9,8 +9,8 @@ from selenium.webdriver.common.by import By
 from time import sleep
 
 def login(driver):
-    username = "cl_me_krrish"  # <username here>
-    password = "9080284489"  # <password here>
+    username = "twin_sai_tech"  # <username here>
+    password = "Kgokulakrishnan71@gmail.com"  # <password here>
 
     # Load page
     driver.get("https://www.instagram.com/accounts/login/")
@@ -52,7 +52,7 @@ def scrape_followers(driver, account,members):
 
 
 def main():
-    account ="cl_me_krrish"
+    account ="twin_sai_tech"
   
     driver = webdriver.Firefox(executable_path="./geckodriver")
     acc_name=[]
@@ -60,7 +60,7 @@ def main():
         login(driver)
         print('Followers of the "{}" account'.format(account))
        
-        for count, follower in enumerate(scrape_followers(driver, account=account,members=7), 1):
+        for count, follower in enumerate(scrape_followers(driver, account=account,members=10), 1):
             acc_name.append(follower[0])
     finally:
         follower_count = []
@@ -75,22 +75,23 @@ def main():
         final_data = {}
         temp = {}
         for i in range(len(acc_name)):
-            temp["Post_count"] = posts[i]
-            temp["Followers"] = follower_count[i]
+            temp["Post_count"] = posts[i-1]
+            temp["Followers"] = follower_count[i-1]
 
             final_data[acc_name[i]] = temp
 
             temp = {}
         wanted_list = []
         for x, y in final_data.items():
-            if y["Post_count"] == "1" and y["Followers"] < 8:
+            if y["Post_count"] == "1" and y["Followers"] < 5:
                 wanted_list.append(x)
 
         driver.quit()
         return wanted_list
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     a = main()
-    print('The Fake ID Pepayal is')
+    print('The Fake ID in my account :')
     for i in a:
         print(i)
+

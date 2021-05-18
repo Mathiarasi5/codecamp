@@ -10,7 +10,7 @@ from time import sleep
 
 def login(driver):
     username = "instaid"  # <username here>
-    password ="yourpassword  # <password here>
+    password ="yourpassword" # <password here>
 
     # Load page
     driver.get("https://www.instagram.com/accounts/login/")
